@@ -1,0 +1,15 @@
+tunnel: ${CLOUDFLARE_TUNNEL_NAME}
+credentials-file: /home/${USER}/.cloudflared/${CLOUDFLARE_TUNNEL_ID}.json
+
+ingress:
+  - hostname: ${DOMAIN_NAME}
+    service: http://127.0.0.1:${PORT_LANDING}
+  - hostname: chat.${DOMAIN_NAME}
+    service: http://127.0.0.1:${PORT_MATTERMOST}
+  - hostname: monitor.${DOMAIN_NAME}
+    service: http://127.0.0.1:${PORT_GRAFANA}
+  - hostname: media.${DOMAIN_NAME}
+    service: http://127.0.0.1:${PORT_JELLYFIN}
+  - hostname: prometheus.${DOMAIN_NAME}
+    service: http://127.0.0.1:${PORT_PROMETHEUS}
+  - service: http_status:404

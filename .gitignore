@@ -1,0 +1,31 @@
+# Cloudflare sensitive files
+.cloudflared/
+*.json
+cert.pem
+*-credentials.json
+
+# Kubernetes secrets and local data
+secrets/
+*.secret
+*.key
+*.pem
+*.crt
+
+# Environment files with actual values
+.env
+.env.local
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.backup
+*.bak
